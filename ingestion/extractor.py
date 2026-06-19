@@ -23,3 +23,4 @@ def fetch_articles():
     if r.ok:
         return r.json()
     raise RuntimeError("Unable to fetch articles")
+
