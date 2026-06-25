@@ -1,5 +1,5 @@
 from google.cloud import bigquery
-from datetime import datetime
+from datetime import datetime, UTC
 
 def load_articles(articles: list[dict], project_name : str, dataset_name : str):
     client = bigquery.Client(project = project_name)
@@ -11,7 +11,7 @@ def load_articles(articles: list[dict], project_name : str, dataset_name : str):
             "url" : article.get("url"),
             "source" : article["source"]["name"],
             "author" : article.get("author"),
-            "ingested_at" : datetime.now(),
+            "ingested_at" : datetime.now(UTC).isoformat(),
             "published" : article.get("publishedAt"),
             "title" : article.get("title"),
             "description" : article.get("description"),
