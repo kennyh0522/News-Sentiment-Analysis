@@ -1,7 +1,9 @@
 from google.cloud import bigquery
 from datetime import datetime, UTC
+from dotenv import load_dotenv
 
 def load_articles(articles: list[dict], project_name : str, dataset_name : str):
+    load_dotenv()
     client = bigquery.Client(project = project_name)
     table_id = f"{project_name}.{dataset_name}.raw_articles"
     

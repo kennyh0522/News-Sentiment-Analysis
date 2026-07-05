@@ -15,8 +15,9 @@ def fetch_articles():
         'from': YESTERDAY,                
         'sortBy': 'publishedAt',                
         'apiKey': NEWS_API_KEY,        
-        'language': 'en'
-    }
+        'language': 'en',
+        'excludeDomains': 'pypi.org'
+        }
 
     r = requests.get(url, params= params)
     
@@ -24,3 +25,4 @@ def fetch_articles():
         return r.json()
     raise RuntimeError("Unable to fetch articles")
 
+print(fetch_articles())
