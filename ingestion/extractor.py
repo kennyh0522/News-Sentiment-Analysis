@@ -16,7 +16,7 @@ def fetch_articles():
         'sortBy': 'publishedAt',                
         'apiKey': NEWS_API_KEY,        
         'language': 'en',
-        'excludeDomains': 'pypi.org'
+        'excludeDomains': 'pypi.org' # don't want python packages
         }
 
     r = requests.get(url, params= params)
