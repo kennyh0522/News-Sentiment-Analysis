@@ -1,1 +1,1 @@
-# Reddit-Sentiment-Analysis
+# Tech News Sentiment-Analysis
