@@ -24,8 +24,7 @@ def score_articles(project_name : str, dataset_name : str):
     
     scores = []
     for row in rows:
-        # print(list(row))
-        # print(f"inputs = {list(row)}")
+        # Row Scoring
         row = list(row)
         scored = sentiment_pipeline(inputs = row) # outputs a list of dictionaries
         scores.append({"url" : row[0], 
